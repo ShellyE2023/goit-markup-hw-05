@@ -41,6 +41,9 @@ h5.h6 {
   padding-left: 15px;
   padding-right: 15px;
 }
+input {
+  font-family: inherit;
+}
 /*=================HEDER================*/
 .header {
   border-bottom: 1px solid #e7e9fc;
@@ -528,7 +531,7 @@ feachers-container {
   gap: 16px;
   color: var(--WHITE, #fff);
   text-align: center;
-  font-family: Roboto;
+  font-family: "Roboto", sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
@@ -550,6 +553,7 @@ feachers-container {
 }
 /*=================================================*/
 .backdrop {
+  padding: 72px 24px 24px 24px;
   position: fixed;
   top: 0;
   left: 0;
@@ -565,11 +569,11 @@ feachers-container {
 }
 .modal {
   position: absolute;
+  padding: 24px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  padding: 24px;
   background-color: #fcfcfc;
   border-radius: 4px;
   width: 408px;
@@ -634,7 +638,6 @@ feachers-container {
 }
 
 .modal-field {
-  padding: 72px 24px 24px 24px;
   margin-bottom: 8px;
 }
 .modal-label {
@@ -645,10 +648,14 @@ feachers-container {
   display: block;
   margin-bottom: 4px;
 }
-.imput-wrap {
+.input-wrap {
+}
+.input-wrap {
   position: relative;
 }
-.imput-wrap .input {
+
+.modal-input {
+  outline: transparent;
   width: 100%;
   height: 40px;
   border: 1px solid rgba(46, 47, 66, 0.4);
@@ -657,18 +664,24 @@ feachers-container {
   padding-left: 38px;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.imput-wrap .input:focus {
-  border-color: #4d5ae5;
+.sprite {
+  fill: none; /* або fill: transparent; */
 }
 .modal-icon {
   position: absolute;
   left: 16px;
   top: 50%;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
   transform: translateY(-50%);
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-.imput-wrap .input:focus .modal-icon {
+.modal-input:focus-within {
+  border-color: #4d5ae5;
+}
+.modal-icon:focus-within {
   fill: #4d5ae5;
 }
 
@@ -733,7 +746,6 @@ feachers-container {
   text-decoration-line: underline;
 }
 .modal-submit-button {
-  display: inline-flex;
   display: block;
   min-width: 169px;
   height: 56px;
@@ -744,10 +756,14 @@ feachers-container {
   cursor: pointer;
   border: none;
   padding: 16px 32px;
-  align-items: flex-start;
+  align-items: center;
   gap: 10px;
+  font-style: normal;
+  margin: 0 auto;
   border-radius: 4px;
-  background: #4d5ae5;
+  background-color: #4d5ae5;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
-  background-color: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-submit-button:focus {
 }
