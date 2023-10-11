@@ -551,7 +551,6 @@ feachers-container {
 }
 /*=====================MODAL==============================*/
 .backdrop {
-  padding: 72px 24px 24px 24px;
   position: fixed;
   top: 0;
   left: 0;
